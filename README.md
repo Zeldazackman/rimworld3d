@@ -8,6 +8,7 @@ Mod that allows RimWorld to be visualized in 3D. It only affects the visual aspe
 - Key `8`: Show FPS
 - ASDW to move the camera, mouse wheel to move the camera up or down
 - Shift + Mouse wheel: Rotate the camera.
+- Video tutorial comming soon.
 
 ## Features
 
