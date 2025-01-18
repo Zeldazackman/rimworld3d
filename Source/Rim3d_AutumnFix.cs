@@ -16,7 +16,7 @@ namespace Rim3D
 
         static PlantMaterialManager()
         {
-            string bundlePath = Path.Combine(Core.Instance.Content.RootDir, "Resources", "AssetBundles", "plantcutout3d");
+            string bundlePath = Path.Combine(LoadedModManager.GetMod<Rim3DMod>().Content.RootDir, "Resources", "AssetBundles", "plantcutout3d");
             //Log.Message("[Rim3D Plant] Loading bundle from: " + bundlePath);
 
             plantBundle = AssetBundle.LoadFromFile(bundlePath);
@@ -128,6 +128,12 @@ namespace Rim3D
             }
             __result = value;
             return false;
+        }
+    }
+    public class Rim3DMod : Mod
+    {
+        public Rim3DMod(ModContentPack content) : base(content)
+        {
         }
     }
 }

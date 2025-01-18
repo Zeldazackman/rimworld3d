@@ -13,7 +13,7 @@ namespace Rim3D
 
         static PostProcessManager()
         {
-            string bundlePath = Path.Combine(Core.Instance.Content.RootDir, "Resources", "AssetBundles", "posprohdr");
+            string bundlePath = Path.Combine(LoadedModManager.GetMod<Rim3DMod>().Content.RootDir, "Resources", "AssetBundles", "posprohdr");
             //Log.Message("[Rim3D] Loading pospo bundle from: " + bundlePath);
 
             pospoBundle = AssetBundle.LoadFromFile(bundlePath);

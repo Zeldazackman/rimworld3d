@@ -48,7 +48,7 @@ namespace Rim3D
             Core.settings.Write();
             Core.settings.SaveCurrentSettings();
 
-            string fullPath = Path.Combine(Core.Instance.Content.RootDir, "Resources", "Skys", filename);
+            string fullPath = Path.Combine(LoadedModManager.GetMod<Rim3DMod>().Content.RootDir, "Resources", "Skys", filename);
 
             if (!File.Exists(fullPath))
             {
@@ -97,7 +97,7 @@ namespace Rim3D
 
         private static void LoadDefaultSkybox()
         {
-            string skyboxPath = Path.Combine(Core.Instance.Content.RootDir, "Resources", "Skys");
+            string skyboxPath = Path.Combine(LoadedModManager.GetMod<Rim3DMod>().Content.RootDir, "Resources", "Skys");
             if (Directory.Exists(skyboxPath))
             {
                 string skyboxToLoad = Core.settings.selectedSkybox;
@@ -154,7 +154,7 @@ namespace Rim3D
 
                 if (skyboxBundle == null)
                 {
-                    string bundlePath = Path.Combine(Core.Instance.Content.RootDir, "Resources", "AssetBundles", "majausky");
+                    string bundlePath = Path.Combine(LoadedModManager.GetMod<Rim3DMod>().Content.RootDir, "Resources", "AssetBundles", "majausky");
                     skyboxBundle = AssetBundle.LoadFromFile(bundlePath);
                     if (skyboxBundle != null)
                     {

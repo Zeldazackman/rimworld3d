@@ -17,7 +17,7 @@ namespace Rim3D
 
         static FireEffectsManager()
         {
-            string bundlePath = Path.Combine(Core.Instance.Content.RootDir, "Resources", "AssetBundles", "campfire");
+            string bundlePath = Path.Combine(LoadedModManager.GetMod<Rim3DMod>().Content.RootDir, "Resources", "AssetBundles", "campfire");
 
             fireBundle = AssetBundle.LoadFromFile(bundlePath);
             if (fireBundle != null)

@@ -24,7 +24,7 @@ namespace Rim3D
             this.closeOnClickedOutside = false;
             this.preventCameraMotion = false;
 
-            string skyboxPath = Path.Combine(Core.Instance.Content.RootDir, "Resources", "Skys");
+            string skyboxPath = Path.Combine(LoadedModManager.GetMod<Rim3DMod>().Content.RootDir, "Resources", "Skys");
             if (Directory.Exists(skyboxPath))
             {
                 var files = Directory.GetFiles(skyboxPath)
@@ -100,7 +100,7 @@ namespace Rim3D
                 {
                     if (Widgets.ButtonText(r, "Open Skybox Folder"))
                     {
-                        string skyboxPath = Path.Combine(Core.Instance.Content.RootDir, "Resources", "Skys");
+                        string skyboxPath = Path.Combine(LoadedModManager.GetMod<Rim3DMod>().Content.RootDir, "Resources", "Skys");
                         if (Directory.Exists(skyboxPath))
                         {
                             Application.OpenURL("file://" + skyboxPath);
