@@ -16,7 +16,7 @@ namespace Rim3D
 
         static PlantMaterialManager()
         {
-            string bundlePath = Path.Combine(GenFilePaths.ModsFolderPath, "rim3d-majaus", "Resources", "AssetBundles", "plantcutout3d");
+            string bundlePath = Path.Combine(Core.Instance.Content.RootDir, "Resources", "AssetBundles", "plantcutout3d");
             //Log.Message("[Rim3D Plant] Loading bundle from: " + bundlePath);
 
             plantBundle = AssetBundle.LoadFromFile(bundlePath);

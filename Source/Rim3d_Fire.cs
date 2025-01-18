@@ -17,7 +17,7 @@ namespace Rim3D
 
         static FireEffectsManager()
         {
-            string bundlePath = Path.Combine(GenFilePaths.ModsFolderPath, "rim3d-majaus", "Resources", "AssetBundles", "campfire");
+            string bundlePath = Path.Combine(Core.Instance.Content.RootDir, "Resources", "AssetBundles", "campfire");
 
             fireBundle = AssetBundle.LoadFromFile(bundlePath);
             if (fireBundle != null)
@@ -39,7 +39,7 @@ namespace Rim3D
                 return Core.settings.enableFireTorchWallLamp;
             if (thing is Fire)
                 return Core.settings.enableOtherFires;
-            
+
             return Core.settings.enableOtherFires;
         }
 
@@ -47,7 +47,7 @@ namespace Rim3D
         {
             if (thing == null || firePrefab == null || !Core.mode3d) return;
 
-            if (!ShouldCreateEffect(thing)) 
+            if (!ShouldCreateEffect(thing))
             {
                 DestroyFireEffect(thing);
                 return;
@@ -102,7 +102,7 @@ namespace Rim3D
         public static void RefreshAllEffects()
         {
             var effectsToDestroy = new List<int>();
-            
+
             foreach (var pair in activeFireEffects)
             {
                 Thing thing = pair.Value.Thing;
